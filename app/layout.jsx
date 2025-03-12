@@ -1,5 +1,7 @@
 import "./globals.css";
 
+import MainHeader from "@/components/MainHeader";
+
 export const metadata = {
   title: "DeliCasa",
   description: "Where Every Bite Feels Like Home!",
@@ -29,7 +31,7 @@ export default function RootLayout({ children }) {
             ></path>
           </svg>
         </div>
-
+        <MainHeader />
         {children}
       </body>
     </html>
