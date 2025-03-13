@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import classes from "./page.module.css";
 
-import ImageSlideShow from "@/components/images/ImageSlideShow";
+import ImageSlideShow from "@/components/ImageSlideShow/ImageSlideShow";
 
 const HomePage = () => {
   return (
