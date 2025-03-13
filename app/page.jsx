@@ -16,13 +16,20 @@ const HomePage = () => {
           <div className={classes.hero}>
             <h1>Welcome to DeliCasa Food. The Best Place for Foodies.</h1>
             <p>
-              Taste the difference. Experience the difference. Enjoy the
-              difference.
+              Welcome to DeliCasa – Where flavors tell stories, and every dish
+              feels like home!
+            </p>
+            <p>
+              Savor the taste, embrace the journey – DeliCasa, your go-to food
+              haven!
+            </p>
+            <p>
+              Cooking with love, serving with passion – Experience DeliCasa!
             </p>
           </div>
           <div className={classes.cta}>
             <Link href={"/community"}>Join the Community</Link>
-            <Link href={"/meals"}>Explore Meals</Link>
+            <Link href={"/meals"}>Explore Our Meals</Link>
           </div>
         </div>
       </header>
