@@ -21,13 +21,17 @@ export default function MealsPage() {
           <span className={classes.highlight}>By You!</span>
         </h1>
         <p>
-          Choose your favorite meal and enjoy a delicious lunch or dinner at
-          home.
+          Choose Your Favorite Meal &{" "}
+          <span className={classes.highlight}>Enjoy</span> a{" "}
+          <span className={classes.highlight}>Wonderful</span> &{" "}
+          <span className={classes.highlight}>Delicious</span> Lunch or Dinner
+          at Your Home.
         </p>
         <p>
-          All our meals are cooked with high-quality ingredients, just-in-time
-          and of course by experienced
-          <span className={classes.highlight}> chefs!</span>
+          Or Share Your Own Recipes with Our Community of{" "}
+          <span className={classes.highlight}>Talented Home Cooks</span> &{" "}
+          <span className={classes.highlight}>Professional</span>{" "}
+          <span className={classes.highlight}>Chefs!</span>
         </p>
         <p className={classes.cta}>
           <Link href={"/meals/share"}>Share Your Favorite Recipe!</Link>
