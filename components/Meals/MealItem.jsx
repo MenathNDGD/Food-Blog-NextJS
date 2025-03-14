@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import classes from "./MealItem.module.css";
 
-const MealItem = ({ title, slug, image, summary, creator }) => {
+const MealItem = ({ title, mealId, image, summary, creator }) => {
   return (
     <article className={classes.meal}>
       <header>
