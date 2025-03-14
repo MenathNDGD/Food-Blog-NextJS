@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,6 +8,10 @@ import { getMealDetails } from "@/lib/meals";
 
 const MealDetailsPage = ({ params }) => {
   const meal = getMealDetails(params.mealId);
+
+  if (!meal) {
+    notFound();
+  }
 
   return (
     <>
