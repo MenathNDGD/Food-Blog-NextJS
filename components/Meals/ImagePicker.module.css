@@ -1,45 +1,67 @@
-.controls {
+.picker {
   display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #454952;
 }
 
-.picker .input {
+.label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.input {
   display: none;
 }
 
-.picker .button {
-  border: 0;
-  padding: 0.5rem 1.5rem;
-  background: #a4abb9;
-  border-radius: 2px;
+.button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: linear-gradient(90deg, #ff6b6b, #ffcc33);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 1rem;
   cursor: pointer;
-  font: inherit;
+  transition: all 0.3s ease-in-out;
 }
 
-.picker .button:hover,
-.picker .button:focus {
-  background: #b3b9c6;
+.button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #ff4757, #ffb142);
 }
 
 .preview {
-  width: 10rem;
-  height: 10rem;
-  border: 2px solid #a4abb9;
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  border: 2px dashed #bbb;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #a4abb9;
+  font-size: 0.9rem;
+  color: #666;
+  background: #fff;
   position: relative;
 }
 
-.preview p {
-  margin: 0;
-  padding: 1rem;
-}
-
-.preview img {
+.image {
   object-fit: cover;
+  border-radius: 8px;
 }
