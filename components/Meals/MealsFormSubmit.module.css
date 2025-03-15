@@ -1,0 +1,57 @@
+.submitBtn {
+  border: none;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(90deg, #f9572a, #ff9b05);
+  color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.25rem;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+  min-width: 200px;
+  height: 50px;
+}
+
+.submitBtn:hover,
+.submitBtn:focus {
+  background: linear-gradient(90deg, #fd4715, #f9b241);
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
+
+.submitBtn:disabled,
+.submitBtn:hover:disabled,
+.submitBtn:focus:disabled {
+  background: #ccc;
+  color: #979797;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.submitText {
+  display: inline-block;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
