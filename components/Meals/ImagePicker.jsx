@@ -2,11 +2,12 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
+import { CloudUpload } from "lucide-react";
 
 import classes from "./ImagePicker.module.css";
 
 const ImagePicker = ({ label, name }) => {
-  const [pickedImage, setPickedImage] = useState();
+  const [pickedImage, setPickedImage] = useState(null);
   const imageInputRef = useRef();
 
   function handlePickImage() {
@@ -22,27 +23,32 @@ const ImagePicker = ({ label, name }) => {
     }
 
     const fileReader = new FileReader();
-
-    fileReader.onload = () => {
-      setPickedImage(fileReader.result);
-    };
-
+    fileReader.onload = () => setPickedImage(fileReader.result);
     fileReader.readAsDataURL(file);
   }
 
   return (
     <div className={classes.picker}>
-      <label htmlFor={name}>{label}</label>
+      <label htmlFor={name} className={classes.label}>
+        {label}
+      </label>
       <div className={classes.controls}>
         <div className={classes.preview}>
-          {!pickedImage && <p>No image picked yet.</p>}
-          {pickedImage && <Image src={pickedImage} alt="Picked Image" fill />}
+          {!pickedImage ? (
+            <p>No image selected</p>
+          ) : (
+            <Image
+              src={pickedImage}
+              alt="Picked Image"
+              fill
+              className={classes.image}
+            />
+          )}
         </div>
         <input
           type="file"
           name={name}
           id={name}
-          placeholder="Pick an image from your device"
           ref={imageInputRef}
           accept=".jpg,.jpeg,.png"
           className={classes.input}
@@ -54,7 +60,7 @@ const ImagePicker = ({ label, name }) => {
           type="button"
           onClick={handlePickImage}
         >
-          Pick Image
+          <CloudUpload size={18} /> Pick Image
         </button>
       </div>
     </div>
