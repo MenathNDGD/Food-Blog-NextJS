@@ -18,6 +18,7 @@
   overflow: hidden;
   min-width: 200px;
   height: 50px;
+  pointer-events: all;
 }
 
 .submitBtn:hover,
@@ -28,13 +29,14 @@
 }
 
 .submitBtn:disabled,
-.submitBtn:hover:disabled,
-.submitBtn:focus:disabled {
-  background: #ccc;
-  color: #979797;
+.submitBtn:disabled:hover,
+.submitBtn:disabled:focus {
+  background: linear-gradient(90deg, #f9572a, #ff9b05);
+  color: #ffffff;
   cursor: not-allowed;
-  transform: none;
   box-shadow: none;
+  transform: none;
+  pointer-events: none;
 }
 
 .spinner {
