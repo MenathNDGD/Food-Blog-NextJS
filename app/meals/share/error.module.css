@@ -1,0 +1,49 @@
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.illustration {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.errorContainer h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #262626;
+  background: linear-gradient(90deg, #f9572a, #ffc905);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Montserrat", sans-serif;
+}
+
+.errorContainer p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.retryButton {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg, #f9572a, #ff9800);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.retryButton:hover {
+  background: linear-gradient(90deg, #ff7300, #ffcc00);
+  transform: scale(1.05);
+}
