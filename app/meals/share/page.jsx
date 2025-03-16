@@ -1,3 +1,7 @@
+"use client";
+
+import { useFormState } from "react-dom";
+
 import classes from "./page.module.css";
 
 import ImagePicker from "@/components/Meals/ImagePicker";
@@ -6,6 +10,8 @@ import MealsFormSubmit from "@/components/Meals/MealsFormSubmit";
 import { shareMeal } from "@/lib/actions";
 
 const ShareMealPage = () => {
+  const [state, formAction] = useFormState(shareMeal, { errors: {} });
+
   return (
     <>
       <header className={classes.header}>
@@ -17,24 +23,38 @@ const ShareMealPage = () => {
         <p>Or Any Other Meal You Feel Needs Sharing!</p>
       </header>
       <main className={classes.main}>
-        <form className={classes.form} action={shareMeal}>
+        <form className={classes.form} action={formAction}>
           <div className={classes.row}>
             <p>
               <label htmlFor="name">Your name</label>
-              <input type="text" id="name" name="name" required />
+              <input type="text" id="name" name="name" />
+              {state.errors?.creator && (
+                <span className={classes.error}>{state.errors.creator}</span>
+              )}
             </p>
             <p>
               <label htmlFor="email">Your email</label>
-              <input type="email" id="email" name="email" required />
+              <input type="email" id="email" name="email" />
+              {state.errors?.creator_email && (
+                <span className={classes.error}>
+                  {state.errors.creator_email}
+                </span>
+              )}
             </p>
           </div>
           <p>
             <label htmlFor="title">Title</label>
-            <input type="text" id="title" name="title" required />
+            <input type="text" id="title" name="title" />
+            {state.errors?.title && (
+              <span className={classes.error}>{state.errors.title}</span>
+            )}
           </p>
           <p>
             <label htmlFor="summary">Short Summary</label>
-            <input type="text" id="summary" name="summary" required />
+            <input type="text" id="summary" name="summary" />
+            {state.errors?.summary && (
+              <span className={classes.error}>{state.errors.summary}</span>
+            )}
           </p>
           <p>
             <label htmlFor="instructions">Instructions</label>
@@ -42,10 +62,15 @@ const ShareMealPage = () => {
               id="instructions"
               name="instructions"
               rows="10"
-              required
             ></textarea>
+            {state.errors?.instructions && (
+              <span className={classes.error}>{state.errors.instructions}</span>
+            )}
           </p>
           <ImagePicker label="Your Image for the Meal here" name="image" />
+          {state.errors?.image && (
+            <span className={classes.error}>{state.errors.image}</span>
+          )}
           <p className={classes.actions}>
             <MealsFormSubmit />
           </p>
