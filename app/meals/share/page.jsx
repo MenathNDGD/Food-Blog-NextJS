@@ -21,6 +21,15 @@ const ShareMealPage = () => {
           name="description"
           content="Share your favorite meal recipes with the Foodies Community. Join us and inspire others with your cooking!"
         />
+        <meta
+          name="keywords"
+          content="share meal, recipe, food community, cooking"
+        />
+        <meta property="og:title" content="Share Your Meal Recipe" />
+        <meta
+          property="og:description"
+          content="Share your favorite meal recipes with the Foodies Community. Join us and inspire others with your cooking!"
+        />
       </Head>
       <header className={classes.header}>
         <h1>
