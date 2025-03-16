@@ -5,11 +5,13 @@ import { ArrowRightCircle } from "lucide-react";
 import classes from "./MealItem.module.css";
 
 const MealItem = ({ title, mealId, image, summary, creator }) => {
+  const imageUrl = `${process.env.NEXT_PUBLIC_AWS_S3_BUCKET_URL}/${image}`;
+
   return (
     <article className={classes.meal}>
       <header>
         <div className={classes.image}>
-          <Image src={image} alt={title} fill />
+          <Image src={imageUrl} alt={title} fill />
         </div>
         <div className={classes.headerText}>
           <h2>{title}</h2>
