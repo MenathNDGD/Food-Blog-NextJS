@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import Link from "next/link";
+import { Share2 } from "lucide-react";
 
 import classes from "./page.module.css";
 
@@ -34,7 +35,9 @@ export default function MealsPage() {
           <span className={classes.highlight}>Chefs!</span>
         </p>
         <p className={classes.cta}>
-          <Link href={"/meals/share"}>Share Your Favorite Recipe!</Link>
+          <Link href="/meals/share" className={classes.shareButton}>
+            <span>Share Your Favorite Recipe!</span> <Share2 size={20} />
+          </Link>
         </p>
       </header>
       <main className={classes.main}>
