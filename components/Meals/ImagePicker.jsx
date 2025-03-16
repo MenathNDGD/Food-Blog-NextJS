@@ -53,7 +53,6 @@ const ImagePicker = ({ label, name }) => {
           accept=".jpg,.jpeg,.png"
           className={classes.input}
           onChange={handleImageChange}
-          required
         />
         <button
           className={classes.button}
