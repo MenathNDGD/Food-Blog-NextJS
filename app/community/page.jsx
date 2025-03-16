@@ -6,6 +6,12 @@ import eventsIcon from "@/assets/icons/events.png";
 
 import classes from "./page.module.css";
 
+export const metadata = {
+  title: "Join Our Community",
+  description:
+    "Join our community of foodies and share your favorite recipes with like-minded people.",
+};
+
 const CommunityPage = () => {
   return (
     <>
