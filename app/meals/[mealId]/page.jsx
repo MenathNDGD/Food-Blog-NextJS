@@ -6,6 +6,19 @@ import classes from "./page.module.css";
 
 import { getMealDetails } from "@/lib/meals";
 
+export async function generateMetadata({ params }) {
+  const meal = getMealDetails(params.mealId);
+
+  if (!meal) {
+    notFound();
+  }
+
+  return {
+    title: meal.title,
+    description: meal.summary,
+  };
+}
+
 const MealDetailsPage = ({ params }) => {
   const meal = getMealDetails(params.mealId);
 
