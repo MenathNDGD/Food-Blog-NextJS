@@ -1,5 +1,6 @@
 "use client";
 
+import Head from "next/head";
 import { useFormState } from "react-dom";
 
 import classes from "./page.module.css";
@@ -14,6 +15,13 @@ const ShareMealPage = () => {
 
   return (
     <>
+      <Head>
+        <title>Share Your Meal Recipe</title>
+        <meta
+          name="description"
+          content="Share your favorite meal recipes with the Foodies Community. Join us and inspire others with your cooking!"
+        />
+      </Head>
       <header className={classes.header}>
         <h1>
           Share Your{" "}
